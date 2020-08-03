@@ -1,7 +1,7 @@
 defmodule Mix.Tasks.TwentyFifteen.Day1 do
   use Mix.Task
 
-  @shortdoc "Advent Of Code 2015 Day 1"
+  @shortdoc "--- Day 1: Not Quite Lisp ---"
 
   @moduledoc """
   Attempts to solve the [Advent Of Code 2015 Day 1 challenge.](https://adventofcode.com/2015/day/1)
@@ -16,7 +16,6 @@ defmodule Mix.Tasks.TwentyFifteen.Day1 do
   @impl Mix.Task
   def run([]), do: {:error, :noargs}
 
-
   @doc """
   ## Example
 
@@ -29,7 +28,6 @@ defmodule Mix.Tasks.TwentyFifteen.Day1 do
     |> Enum.reduce(0, &find_next_floor/2)
     |> Logger.info()
   end
-
 
   @doc """
   ## Example

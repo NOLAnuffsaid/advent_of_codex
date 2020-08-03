@@ -1,7 +1,7 @@
 defmodule Mix.Tasks.TwentyFifteen.Day3 do
   use Mix.Task
 
-  @shortdoc "Advent Of Code 2015 Day 3"
+  @shortdoc "--- Day 3: Perfectly Spherical Houses in a Vacuum ---"
 
   @moduledoc """
   Attempts to solve the [Advent Of Code 2015 Day 3 challenge.](https://adventofcode.com/2015/day/3)
@@ -37,11 +37,10 @@ defmodule Mix.Tasks.TwentyFifteen.Day3 do
   def count_split_delivery([_h | tail] = all_chars) do
     [all_chars, tail]
     |> Enum.map(fn chars ->
-      Task.async(fn
-        ->
-          chars
-          |> Enum.take_every(2)
-          |> deliver_presents()
+      Task.async(fn ->
+        chars
+        |> Enum.take_every(2)
+        |> deliver_presents()
       end)
     end)
     |> Enum.flat_map(&Task.await/1)
@@ -51,7 +50,7 @@ defmodule Mix.Tasks.TwentyFifteen.Day3 do
 
   defp deliver_presents(chars) do
     chars
-    |> Enum.reduce([{0,0}], fn
+    |> Enum.reduce([{0, 0}], fn
       char, coords_list ->
         last_coord = List.last(coords_list)
         coords_list ++ [move_santa(char, last_coord)]

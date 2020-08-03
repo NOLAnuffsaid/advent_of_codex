@@ -1,7 +1,7 @@
 defmodule Mix.Tasks.TwentyFifteen.Day2 do
   use Mix.Task
 
-  @shortdoc "Advent Of Code 2015 Day 2"
+  @shortdoc "--- Day 2: I Was Told There Would Be No Math ---"
 
   @moduledoc """
   Attempts to solve the [Advent Of Code 2015 Day 2 challenge.](https://adventofcode.com/2015/day/2)
@@ -15,7 +15,6 @@ defmodule Mix.Tasks.TwentyFifteen.Day2 do
 
   @impl Mix.Task
   def run([]), do: {:error, :noargs}
-
 
   @doc """
   ## Example
@@ -33,7 +32,6 @@ defmodule Mix.Tasks.TwentyFifteen.Day2 do
     end)
     |> Logger.info()
   end
-
 
   @doc """
   ## Example
