@@ -11,6 +11,17 @@ defmodule AOC.MixProject do
       config_path: "config/config.exs",
       deps: deps(),
       deps_path: "deps",
+      dialyzer: [
+        paths: ["_build/dev/lib/frame_io/ebin"],
+        plt_add_deps: :apps_direct
+      ],
+      preferred_cli_env: [
+        coveralls: :test,
+        "coveralls.detail": :test,
+        "coveralls.post": :test,
+        "coveralls.html": :test
+      ],
+      test_coverage: [tool: ExCoveralls],
       lockfile: "mix.lock"
     ]
   end
@@ -28,7 +39,9 @@ defmodule AOC.MixProject do
   defp deps do
     [
       {:credo, "~> 1.1", only: [:dev, :test], runtime: false},
-      {:mix_test_watch, "~> 1.0", only: :dev, runtime: false}
+      {:dialyxir, "~> 1.0", only: :dev, runtime: false},
+      {:ex_doc, "~> 0.22", only: :dev, runtime: false},
+      {:excoveralls, "~> 0.13", only: :test}
     ]
   end
 end

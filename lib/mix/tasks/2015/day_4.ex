@@ -1,7 +1,7 @@
 defmodule Mix.Tasks.TwentyFifteen.Day4 do
   use Mix.Task
 
-  @shortdoc "Advent Of Code 2015 Day 4"
+  @shortdoc "--- Day 4: The Ideal Stocking Stuffer ---"
 
   @moduledoc """
   Attempts to solve the [Advent Of Code 2015 Day 4 challenge.](https://adventofcode.com/2015/day/4)
@@ -49,7 +49,7 @@ defmodule Mix.Tasks.TwentyFifteen.Day4 do
   end
 
   defp find_n({secret, leading_str}),
-    do: for n <- (1..100_000_000_000), "#{secret}#{n}" |> correct_hash?(leading_str), do: throw(n)
+    do: for(n <- 1..100_000_000_000, "#{secret}#{n}" |> correct_hash?(leading_str), do: throw(n))
 
   defp correct_hash?(str, expected_start),
     do: str |> hash_str() |> String.starts_with?(expected_start)
