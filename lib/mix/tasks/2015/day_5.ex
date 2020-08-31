@@ -1,9 +1,7 @@
 defmodule Mix.Tasks.TwentyFifteen.Day5 do
   use Mix.Task
 
-  @shortdoc """
-  --- Day 5: Doesn't He Have Intern-Elves For This? ---
-  """
+  @shortdoc "--- Day 5: Doesn't He Have Intern-Elves For This? ---"
 
   @doc """
   --- Part One ---
